@@ -1,15 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
+import Avatar from "./Avatar";
+import Details from "./Details";
 function Card(props) {
-  console.log(props);
   return (
-    <div>
-      <h2>{props.name}</h2>
-      <p>Phone Number: {props.tel}</p>
-      <img className="image" src={props.img} alt="alt_img" />
+    <div className="card">
+      <div className="top">
+        <h2 className="name">{props.name}</h2>
+        <Avatar imgURL={props.imgURL} />
+      </div>
+      <Details phone={props.phone} email={props.email} />
     </div>
   );
 }
-
 export default Card;
