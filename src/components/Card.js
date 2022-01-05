@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
 
 function Card(props) {
   console.log(props);
@@ -13,9 +12,4 @@ function Card(props) {
   );
 }
 
-ReactDOM.render(
-  <div>
-    <App />
-  </div>,
-  document.getElementById("root")
-);
+export default Card;
