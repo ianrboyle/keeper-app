@@ -35,6 +35,11 @@ footer {
 footer p {
   color: #ccc;
 }
+
+.image {
+  width: 300px;
+  height: 300px;
+}
 .note {
   background: #fff;
   border-radius: 7px;
