@@ -2,17 +2,21 @@ import React from "react";
 import Heading from "./Heading"
 import Note from "./Note"
 import Footer from "./Footer"
-import Card from "./Card"
-import contacts from "../contacts.js"
+import notes from "../notes"
+// import Card from "./Card"
+// import contacts from "../contacts.js"
 
-function createCard(contact) {
-  return <Card name={contact.name} imgURL={contact.imgURL} phone={contact.phone} email={contact.email}/>
+// function createCard(contact) {
+//   return <Card key={contact.id} name={contact.name} imgURL={contact.imgURL} phone={contact.phone} email={contact.email}/>
+// }
+
+function createNote(note) {
+  return <Note ket={note.id} title={note.title} content={note.content} />
 }
-
 function App() {
   return <div><Heading />
-   <Note />    
-   {contacts.map(createCard)}
+   {notes.map(createNote)}
+   {/* {contacts.map(createCard)} */}
    {/* <Card
   name="Me"
   tel="123-456-7890"
