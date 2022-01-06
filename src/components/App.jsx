@@ -8,9 +8,8 @@ import notes from "../notes"
 
 function App() {
   return <div><Heading />
-   {notes.map((note) => {
-  return <Note key={note.id} title={note.title} content={note.content.substring(0,75) + "..."} />
-})}
+   {notes.map((note) =>  <Note key={note.id} title={note.title} content={note.content.substring(0,75) + "..."} />
+)}
  
 <Footer /></div>
 }
