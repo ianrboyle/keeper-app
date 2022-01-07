@@ -1,11 +1,20 @@
 import React from "react";
 
-function strike() {
-  document.getElementById("root").style.textDecoration = "line-through"
-}
+
+
+
+
 
 function Note(props) {
-  return <div className="note"><h1>{props.title}</h1><p>{props.content}</p><button onClick={strike}>Read</button></div>
+
+
+// function unStrike() {
+//   strikeThrough(isRead === false)
+//   console.log(isRead)
+// }
+
+
+  return <div className="note"><h1>{props.title}</h1><p>{props.content}</p></div>
 }
 
 export default Note;
