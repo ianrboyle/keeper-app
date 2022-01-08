@@ -18,16 +18,22 @@ function Login(props) {
     setName(event.target.value);
   }
 
+  const [headingName, setHeadingName] = useState("");
+
+  function handleClick() {
+    setHeadingName(name);
+  }
   return (
     <div>
       <div className="container">
         <form className="form">
-          <h1>Hello {name}</h1>
+          <h1>Hello {headingName}</h1>
           <input type="text" onChange={handleChange} value={name} placeholder="Your Name" />
           <Input type="text" placeholder="Username" />
           <Input type="password" placeholder="Password" />
           {props.isRegistered === false && <Input type="password" placeholder="Confirm Password" />}
           <button
+            onClick={handleClick}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             style={{ backgroundColor: isMousedOver ? "rgb(155, 223, 151)" : "rgb(237, 227, 149)" }}
