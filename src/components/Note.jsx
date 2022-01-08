@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 
@@ -6,15 +6,14 @@ import React from "react";
 
 
 function Note(props) {
+  const [isMousedOver, setMouseOver] = useState(false)
 
+  function handleMouseOver(note){
+    setMouseOver(true)
+  }
+  return <div onMouseOver={handleMouseOver} style={{backgroundColor: isMousedOver ? "lightcyan" : "white"}} className="note"><h1>{props.title}</h1><p>{props.content}</p>
 
-// function unStrike() {
-//   strikeThrough(isRead === false)
-//   console.log(isRead)
-// }
-
-
-  return <div className="note"><h1>{props.title}</h1><p>{props.content}</p></div>
+  </div>
 }
 
 export default Note;
