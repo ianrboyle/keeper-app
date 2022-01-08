@@ -15,7 +15,6 @@ function App() {
     <Heading />
     <Hook />
     {isLoggedIn ? null : <Login isRegistered={isRegistered}/>}
-    {/* {isRegistered ? <Register /> : <Login />} */}
     {notes.map((note) =>  <Note key={note.id} title={note.title} content={note.content.substring(0,75) + "..."}  />
 )}
  
