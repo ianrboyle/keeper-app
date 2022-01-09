@@ -16,7 +16,9 @@ function Note(props) {
   return <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} style={{backgroundColor: isMousedOver ? "lightcyan" : "white"}} className="note">
     <h1>{props.title}</h1>
     <p>{props.content}</p>
-    <button>Delete</button>
+    <button onClick={() => {
+      props.delete(props.id)
+    }}>Delete</button>
   </div>
 }
 
