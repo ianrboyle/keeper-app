@@ -13,7 +13,7 @@ function Hook() {
   }
   return (
     <div>
-      <h1>{count}</h1>
+      <h1>Hook: {count}</h1>
       <button onClick={increaseCount}>Increase</button>
       <button onClick={decreaseCount}>Decrease</button>
     </div>
