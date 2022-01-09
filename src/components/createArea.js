@@ -8,6 +8,8 @@ function CreateArea(props) {
     content: "",
   });
 
+  const [isExpanded, showCard] = useState(false);
+
   function handleChange(event) {
     const { name, value } = event.target;
     setNote((prevNote) => {
@@ -25,18 +27,44 @@ function CreateArea(props) {
     });
     event.preventDefault();
   }
+
+  function handleClick() {
+    showCard(!isExpanded);
+    console.log(isExpanded);
+  }
+
   return (
     <div>
-      <Zoom in={true}>
-        <form class="create-note">
-          <input name="title" value={note.title} onChange={handleChange} placeholder="Title" />
-          <textarea name="content" value={note.content} onChange={handleChange} placeholder="Take a note..." rows="3" />
+      <form className="create-note">
+        {isExpanded && <input name="title" value={note.title} onChange={handleChange} placeholder="Title" />}
+        {isExpanded ? (
+          <textarea
+            onClick={handleClick}
+            name="content"
+            value={note.content}
+            onChange={handleChange}
+            placeholder="Take a note..."
+            rows="3"
+          />
+        ) : (
+          <textarea
+            onClick={handleClick}
+            name="content"
+            value={note.content}
+            onChange={handleChange}
+            placeholder="Take a note..."
+            rows="1"
+          />
+        )}
 
-          <Fab onClick={submitNote}>
-            <AddIcon />
-          </Fab>
-        </form>
-      </Zoom>
+        {isExpanded && (
+          <Zoom in={true}>
+            <Fab onClick={submitNote}>
+              <AddIcon />
+            </Fab>
+          </Zoom>
+        )}
+      </form>
     </div>
   );
 }
