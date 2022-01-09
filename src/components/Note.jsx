@@ -3,7 +3,7 @@ import React, {useState} from "react";
 
 function Note(props) {
 
-  
+
   const [isMousedOver, setMouseOver] = useState(false)
 
   function handleMouseOver(){
@@ -13,8 +13,10 @@ function Note(props) {
   function handleMouseOut() {
     setMouseOver(false)
   }
-  return <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} style={{backgroundColor: isMousedOver ? "lightcyan" : "white"}} className="note"><h1>{props.title}</h1><p>{props.content}</p>
-
+  return <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} style={{backgroundColor: isMousedOver ? "lightcyan" : "white"}} className="note">
+    <h1>{props.title}</h1>
+    <p>{props.content}</p>
+    <button>Delete</button>
   </div>
 }
 

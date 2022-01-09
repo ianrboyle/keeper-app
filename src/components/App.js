@@ -7,11 +7,22 @@ import CreateArea from "./createArea";
 // import Register from "./Register"
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  //thie "note" is being passed over from createArea component
+  function addNote(note) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, note];
+    });
+    console.log(note);
+  }
   return (
     <div>
       <Heading />
-      <CreateArea />
-      <Note />
+      <CreateArea onAdd={addNote} />
+      {notes.map((noteItem, index) => {
+        return <Note title={noteItem.title} content={noteItem.content} key={index} id={index} />;
+      })}
       <Footer />
     </div>
   );
