@@ -24,6 +24,7 @@ function App() {
       });
     });
   }
+
   return (
     <div>
       <Heading />
@@ -31,6 +32,7 @@ function App() {
       {notes.map((noteItem, index) => {
         return <Note title={noteItem.title} content={noteItem.content} key={index} id={index} delete={deleteNote} />;
       })}
+
       <Footer />
     </div>
   );
