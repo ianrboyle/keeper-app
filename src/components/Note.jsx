@@ -1,11 +1,9 @@
 import React, {useState} from "react";
 
 
-
-
-
-
 function Note(props) {
+
+  
   const [isMousedOver, setMouseOver] = useState(false)
 
   function handleMouseOver(){
