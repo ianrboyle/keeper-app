@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Heading from "./Heading";
 import Note from "./Note";
 import Footer from "./Footer";
-import SearchBar from "./SearchBar";
+import TitleSearchBar from "./TitleSearchBar";
+import ContentSearchBar from "./ContentSearchBar";
 import CreateArea from "./createArea";
 // import Register from "./Register"
 
@@ -41,7 +42,8 @@ function App() {
   return (
     <div>
       <Heading />
-      <SearchBar titleSearch={search.titleSearch} handleChange={handleChange} />
+      <TitleSearchBar titleSearch={search.titleSearch} handleChange={handleChange} />
+      <ContentSearchBar contentSearch={search.contentSearch} handleChange={handleChange} />
       <CreateArea onAdd={addNote} />
       {notes.map((noteItem, index) => {
         return <Note title={noteItem.title} content={noteItem.content} key={index} id={index} delete={deleteNote} />;

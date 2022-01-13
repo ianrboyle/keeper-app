@@ -1,15 +1,15 @@
 import React from "react";
 
-function SearchBar(props) {
+function ContentSearchBar(props) {
   return (
     <input
       type="text"
-      name="titleSearch"
-      value={props.titleSearch}
+      name="contentSearch"
+      value={props.contentSearch}
       onChange={props.handleChange}
       placeholder="Search for a note"
     />
   );
 }
 
-export default SearchBar;
+export default ContentSearchBar;
