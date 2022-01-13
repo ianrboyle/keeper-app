@@ -60,7 +60,7 @@ function App() {
     .filter((note) => {
       if (search.titleSearch === "" && search.contentSearch === "") {
         return note;
-      } else if (note.title.includes(search.titleSearch) || note.content.includes(search.contentSearch)) {
+      } else if (note.title.includes(search.titleSearch) && note.content.includes(search.contentSearch)) {
         return note;
       }
     })
