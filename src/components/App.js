@@ -39,16 +39,42 @@ function App() {
     });
   }
 
+  // function filterNotes(e) {
+  //   if (e.target.value === "") {
+  //     return notes.map((noteItem, index) => {
+  //       return <Note title={noteItem.title} content={noteItem.content} key={index} id={index} delete={deleteNote} />;
+  //     });
+  //   } else {
+  //     const filtered = notes
+  //       .filter((note) => {
+  //         return note.title.toLowerCase().includes(e.target.value.toLowerCase());
+  //       })
+  //       .map((noteItem, index) => {
+  //         return <Note title={noteItem.title} content={noteItem.content} key={index} id={index} delete={deleteNote} />;
+  //       });
+  //     setNotes(filtered);
+  //     setFilterState(true);
+  //   }
+  // }
+  const renderedNotes = notes
+    .filter((note) => {
+      if (search.titleSearch === "" && search.contentSearch === "") {
+        return note;
+      } else if (note.title.includes(search.titleSearch) || note.content.includes(search.contentSearch)) {
+        return note;
+      }
+    })
+    .map((noteItem, index) => {
+      return <Note title={noteItem.title} content={noteItem.content} key={index} id={index} delete={deleteNote} />;
+    });
   return (
     <div>
       <Heading />
       <TitleSearchBar titleSearch={search.titleSearch} handleChange={handleChange} />
       <ContentSearchBar contentSearch={search.contentSearch} handleChange={handleChange} />
-      <CreateArea onAdd={addNote} />
-      {notes.map((noteItem, index) => {
-        return <Note title={noteItem.title} content={noteItem.content} key={index} id={index} delete={deleteNote} />;
-      })}
 
+      <CreateArea onAdd={addNote} />
+      {renderedNotes}
       <Footer />
     </div>
   );

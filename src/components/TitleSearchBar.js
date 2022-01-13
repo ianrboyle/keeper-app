@@ -7,7 +7,7 @@ function TitleSearchBar(props) {
       name="titleSearch"
       value={props.titleSearch}
       onChange={props.handleChange}
-      placeholder="Search for a note"
+      placeholder="Search vit title"
     />
   );
 }

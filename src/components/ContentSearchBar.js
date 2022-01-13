@@ -7,7 +7,7 @@ function ContentSearchBar(props) {
       name="contentSearch"
       value={props.contentSearch}
       onChange={props.handleChange}
-      placeholder="Search for a note"
+      placeholder="Search for a content"
     />
   );
 }
